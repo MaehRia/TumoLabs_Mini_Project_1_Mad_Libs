@@ -1,0 +1,108 @@
+from tkinter import *
+import random
+
+root = Tk()
+root.geometry('300x300')
+root.title('DataFlair - Mad Libs Generator')
+Label(root, text='Mad Libs Generator \n Have Fun!', font='arial 20 bold').pack()
+Label(root, text='Click Any One :', font='arial 15 bold').place(x=40, y=80)
+
+
+def mad_lib_1():
+    # Collect the inputs directly into lists
+    numbers = [input('Input a number -> '), input('Input the second number -> ')]
+    m_of_time = input('Input a measure of time -> ')
+    m_of_tran = input('Input a mode of transportation -> ')
+    adjectives = [input('Input an adjective -> '), input('Input the second adjective -> '), input('Input the third '
+                                                                                                  'adjective -> ')]
+    nouns = [input('Input a noun -> '), input('Input the second noun -> '), input('Input the third noun -> '),
+             input('Input the forth noun -> ')]
+    color = input('Input a color -> ')
+    part_of_body = input('Input a part of body -> ')
+    verbs = [input('Input a verb -> '), input('Input the second verb -> ')]
+    s_word = input('Input a silly word -> ')
+
+    # Randomly select and remove elements from the list to ensure they are unique
+    noun1, noun2, noun3, noun4 = random.sample(nouns, 4)
+    adj1, adj2, adj3 = random.sample(adjectives, 3)
+    verb1, verb2 = random.sample(verbs, 2)
+    numb1, numb2 = random.sample(numbers, 2)
+
+    # Create the story with unique values
+    print(f"It was about {numb1} {m_of_time}s ago when I arrived at the hospital in a {m_of_tran}. "
+          f"The hospital is a/an {adj1} place, there are a lot of {adj2} {noun1}s here. "
+          f"There are nurses here who have {color} {part_of_body}. If someone wants to come into "
+          f"my room I told them that they have to {verb1} first. I’ve decorated my room with {numb2} "
+          f"{noun2}s. Today I talked to a doctor and they were wearing a {noun3} on their {part_of_body}. "
+          f"I heard that all doctors {verb2} {noun4} every day for breakfast. The most {adj3} thing "
+          f"about being in the hospital is the {s_word} {noun4}!")
+
+
+def mad_lib_2():
+    name = input("Input a person's name -> ").capitalize()
+    nouns = [input("Input a noun -> "), input("Input the second noun ->")]
+    adjectives = [input("Input an adjective -> "), input("Input the second adjective -> ")]
+    feelings = [input("Input a feeling -> "), input("Input the second feeling -> ")]
+    verbs = [input("Input a verb -> "), input("Input the second verb -> "), input("Input the third verb -> ")]
+    animal = input("Input an animal -> ")
+    color = input("Input a color -> ")
+    adv = input("Input an adverb -> ") + 'ly'
+    num = input("Input a number -> ")
+    m_of_time = input("Input a measure of time -> ")
+    s_word = input("Input a silly word -> ")
+
+    noun1, noun2 = random.sample(nouns, 2)
+    adj1, adj2 = random.sample(adjectives, 2)
+    feel1, feel2 = random.sample(feelings, 2)
+    verb1, verb2, verb3 = random.sample(verbs, 3)
+
+    print(f"This weekend I am going camping with {name}. I packed my lantern, sleeping bag, and {noun1}. I am so "
+          f"{adj1} {feel1} to {verb1} in a tent. I am {adj2} {feel2} we might see a/an {animal}, I hear they're "
+          f"kind of dangerous. While we’re camping, we are going to hike, fish, and {verb2}.I have heard that the "
+          f"{color} lake is great for {verb3}ing. Then we will {adv} hike through the forest for {num} {m_of_time}s."
+          f" If I see a {color} {animal} while hiking, I am going to bring it home as a pet! At night we willtell "
+          f"{num} {s_word} stories and roast {noun2} around the campfire!!")
+'''
+Dear (Proper Noun (Person’s Name) ), I am writing to you from a (Adjective) castle in an enchanted forest. I found 
+myself here one day after going for a ride on a (Color) (Animal) in (Place). There are (Adjective2) (Magical Creature 
+(Plural)) and (Adjective3) (Magical Creature (Plural)2) here! In the ( Room in a House) there is a pool full of (Noun). I fall
+asleep each night on a (Noun2) of (Noun(Plural)3) and dream of (Adjective4) ( Noun (Plural)4). It feels as though I
+have lived here for (Number) ( Measure of time). I hope one day you can visit, although the only way to get here now 
+is (Verb (ending in ing)) on a (Adjective5) (Noun5)!!'''
+
+
+def mad_lib_3():
+    name = input("Input a name -> ").capitalize()
+    adjectives = [input("Input an adjective -> "), input("Input the second adjective -> "),
+                  input("Input the third adjective -> "), input("Input the forth adjective -> "),
+                  input("Input the fifth adjective -> ")]
+    color = input("Input a color -> ")
+    animal = input("Input a name of an animal -> ")
+    place = input("Input a name of a place -> ")
+    m_creatures = [input("Input a name of a magical creature(in plural form) -> "),
+                   input("Input a name of teh second magical creature(in plural form) -> ")]
+    room = input("Input a name of a room in a house -> ")
+    nouns = [input("Input a noun -> "), input("Input the second noun -> ")]
+    noun_in_p = [input("Input the third noun(in plural form) -> "), input("Input the forth noun(in plural form) -> ")]
+    nouns.append(input("Input the fifth noun -> "))
+    num = input("Input a number -> ")
+    m_of_time = input("Input a measure of time -> ")
+    verb = input("Input a verb -> ")
+
+    adj1, adj2, adj3, adj4, adj5 = random.sample(adjectives, 5)
+    m_cr1, m_cr2 = random.sample(m_creatures, 2)
+    noun1, noun2, noun3 = random.sample(nouns, 3)
+    noun_in_p1, noun_in_p2 = random.sample(noun_in_p, 2)
+
+    print(f"Dear {name}, I am writing to you from a {adj1} castle in an enchanted forest. I found myself here one day "
+          f"after going for a ride on a {color} {animal} in {place}. There are {adj2} {m_cr1} and {adj3} {m_cr2} here!"
+          f" In the {room} there is a pool full of {noun1}. I fall asleep each night on a {noun2} of {noun_in_p1} and "
+          f"dream of {adj4} {noun_in_p2}. It feels as though I have lived here for {num} {m_of_time}. I hope one day "
+          f"you can visit, although the only way to get here now is {verb}ing on a {adj5} {noun3}!!")
+
+
+Button(root, text='Crazy Hospital', font='arial 15', command=mad_lib_1, bg='ghost white').place(x=60, y=120)
+Button(root, text='Camping', font='arial 15', command=mad_lib_2, bg='ghost white').place(x=70, y=180)
+Button(root, text='Enchanted Forest', font='arial 15', command=mad_lib_3, bg='ghost white').place(x=80, y=240)
+
+root.mainloop()
